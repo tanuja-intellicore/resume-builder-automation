@@ -1,7 +1,7 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import assert from "assert";
 
-import { navigateToBaseUrl,loginAsUser,verifyDashboardPage } from "../step-implemenations/login.ui";
+import { navigateToBaseUrl,loginAsUser,verifyDashboardPage } from "../step-implementations/login.ui.helper";
 import { pageFixture } from "../helper/pageFixture" // Adjust the path as needed
 
 
