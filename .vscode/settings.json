@@ -1,0 +1,27 @@
+{
+  "cucumberautocomplete.steps": [
+    "test/step-definitions/**/*.ts"
+  ],
+  "cucumberautocomplete.syncfeatures": "features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "cucumberautocomplete.customParameters": [],
+  "cucumberautocomplete.debug": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.formatOnSave": true,
+  "[gherkin]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then|And|But)",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 100,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

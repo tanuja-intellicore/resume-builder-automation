@@ -1,0 +1,89 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;successful-login",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successful login",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1809387291
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I open the login page",
+            "match": {
+              "location": "test/step-definitions/login.ui.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2510902708
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter \"admin\" credentials",
+            "match": {
+              "location": "test/step-definitions/login.ui.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 167005208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see the dashboard",
+            "match": {
+              "location": "test/step-definitions/login.ui.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 208322790
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 200264334
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Login functionality",
+    "tags": [
+      {
+        "name": "@ui",
+        "line": 1
+      }
+    ],
+    "uri": "features/login/login.feature"
+  }
+]
