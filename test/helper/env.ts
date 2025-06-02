@@ -6,4 +6,7 @@ dotenv.config({
   path: path.resolve(__dirname, `../../env/.env.${process.env.ENV}`),
 });
 
+
+console.log(rawData)
+console.log("rrr"+process.env.ENV)
 export const envConfig = rawData[`${process.env.ENV}`][`${process.env.TENANT}`];

@@ -13,15 +13,15 @@
   },
   "editor.formatOnSave": true,
   "[gherkin]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "CucumberOpen.cucumber-official"
   },
   "cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then|And|But)",
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 100,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   }
 }

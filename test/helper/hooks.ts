@@ -17,6 +17,7 @@ Before({ tags: "@ui" }, async function () {
     viewport: null // Important: this disables the default viewport size
   });
   const page = await context.newPage();
+  await context.tracing.start({ screenshots: true, snapshots: true });
   pageFixture.page = page;
 });
 
@@ -27,7 +28,12 @@ After({ tags: "@ui" }, async function ({ pickle, result }) {
       path: `./test-results/screenshots/${pickle.name}.png`,
       type: "png",
     });
-    await this.attach(img, "image/png");
+    
+     await this.attach(img, "image/png");
+     await context.tracing.stop({ path: `test-results/traces/trace-${Date.now()}.zip` });
+  }
+  else{
+     await context.tracing.stop();
   }
   await pageFixture.page.close();
   await context.close();
