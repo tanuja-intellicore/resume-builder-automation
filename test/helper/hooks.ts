@@ -25,12 +25,12 @@ After({ tags: "@ui" }, async function ({ pickle, result }) {
   let img: Buffer;
   if (result?.status == Status.FAILED) {
     img = await pageFixture.page.screenshot({
-      path: `./test-results/screenshots/${pickle.name}.png`,
+      path: `./cucumber-report/screenshots/${pickle.name}.png`,
       type: "png",
     });
     
      await this.attach(img, "image/png");
-     await context.tracing.stop({ path: `test-results/traces/trace-${pickle.name}.zip` });
+     await context.tracing.stop({ path: `cucumber-report/traces/trace-${pickle.name}.zip` });
   }
   else{
      await context.tracing.stop();
