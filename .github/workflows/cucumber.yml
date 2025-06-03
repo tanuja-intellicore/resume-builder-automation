@@ -1,4 +1,4 @@
-name: Run UI Tests
+name: Run API then UI Tests
 
 on:
   push:
@@ -7,29 +7,38 @@ on:
     branches: [main]
 
 jobs:
-  cucumber:
+  api-tests:
+    name: API Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 24
-
-      - name: Install dependencies
-        run: |
-          npm install
-          npx playwright install
-
-      - name: Run Cucumber tests with @ui tag
-        run: npm run test-ui
-
-      - name: Upload Cucumber Report
-        if: always()
-        uses: actions/upload-artifact@v4
+      - run: |
+          npm ci
+          npm run test-api
+      - uses: actions/upload-artifact@v4
         with:
-          name: cucumber-report
+          name: api-cucumber-json
+          path: test-results
+
+  ui-tests:
+    name: UI Tests
+    needs: api-tests  # 👈 waits for api-tests to complete
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 24
+      - run: |
+          npm ci
+          npx playwright install
+          npm run test-ui
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ui-cucumber-json
           path: test-results
