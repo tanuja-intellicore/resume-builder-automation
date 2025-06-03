@@ -1,17 +1,31 @@
-import { APIRequestContext, APIResponse } from '@playwright/test';
-import { expect } from '@playwright/test';
+import { request, APIRequestContext, APIResponse,expect} from '@playwright/test';
+import { setApiState } from '../helper/pageFixture';
+import stripAnsi from 'strip-ansi';
 
-export async function getPosts(context: APIRequestContext, url:string): Promise<APIResponse> {
-  console.log("Request context: " + JSON.stringify(context, null, 2));
+let apiContext: APIRequestContext;
 
-  const apiResponse = await context.get(url);
+export async function initApiContext(baseURL: string): Promise<void> {
+  apiContext = await request.newContext({ baseURL });
+}
 
-  console.log("apiResponse status: " + apiResponse.status());
+export async function getApi(endpoint: string): Promise<APIResponse> {
+  const response = await apiContext.get(endpoint);
+  setApiState(response, endpoint);
+  return response;
+}
 
-  return apiResponse;
+export async function postApi(endpoint: string, data: any): Promise<APIResponse> {
+  const response = await apiContext.post(endpoint, { data });
+  setApiState(response, endpoint, data);
+  return response;
 }
 
 export function expectStatus(response: APIResponse, expectedStatus: number): void {
-  expect(response.status()).toEqual(expectedStatus);
+ 
+  try {
+    expect(response.status()).toEqual(expectedStatus);
+  } catch (error) {
+    const cleanMessage = stripAnsi(error.message);
+    throw new Error(cleanMessage);
+  }
 }
-

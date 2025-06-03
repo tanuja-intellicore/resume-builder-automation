@@ -30,3 +30,13 @@ export async function verifyDashboardPage(): Promise<void> {
   assert.ok(url.includes('/dashboard'), 'User is not on dashboard page');
 }
 
+export async function verifyDashboardPage1(): Promise<void> {
+  const page = pageFixture.page;
+
+  await page.waitForSelector(
+    'text=QA Meetup with Rahul Shetty @Pune - Limited Seats! Book Now!'
+  );
+  const url = page.url();
+  assert.ok(url.includes('/dashboard111'), 'User is not on dashboard page');
+}
+

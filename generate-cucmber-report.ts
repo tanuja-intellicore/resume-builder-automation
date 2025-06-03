@@ -5,7 +5,7 @@ report.generate({
   reportPath: "test-results/reports/",
   reportName: "Resume Builder Automation Report",
   pageTitle: "Resume Builder Automation Report",
-  displayDuration: false,
+  displayDuration: true,
   metadata: {
     browser: {
       name: "chrome",
