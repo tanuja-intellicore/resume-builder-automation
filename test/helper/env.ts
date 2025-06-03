@@ -9,6 +9,4 @@ dotenv.config({
 });
 
 
-console.log(rawData)
-console.log("rrr"+environment)
 export const envConfig = rawData[`${environment}`][`${process.env.TENANT}`];

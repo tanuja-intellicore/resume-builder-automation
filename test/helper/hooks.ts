@@ -8,7 +8,6 @@ let context: BrowserContext;
 
 Before({ tags: "@ui" }, async function () {
   const value = process.env.HEAD; // e.g., "true" or "false"
-  console.log("Headless mode:", value);
   const head: boolean = value === "true";
   browser = await chromium.launch({
     headless: head,
