@@ -3,7 +3,11 @@ name: UI Tests
 on:
   push:
     branches: [main]
-    
+  workflow_run:
+    workflows: ["API Tests"]  # 👈 Must match the `name:` of Workflow A
+    types:
+      - completed
+
 permissions:
   contents: write
   pages: write
