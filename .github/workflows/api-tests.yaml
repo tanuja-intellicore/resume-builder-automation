@@ -1,8 +1,12 @@
-name: UI Tests
+name: API Tests
 
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: write
+  pages: write
 
 jobs:
   ui:
