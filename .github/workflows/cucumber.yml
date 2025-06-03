@@ -23,9 +23,7 @@ jobs:
         run: npm ci
 
       - name: Run Cucumber tests with @ui tag
-        run: |
-          ENV=TEST npx cucumber-js --tags "@ui"
-          npx ts-node generate-cucmber-report.ts
+        run: npm run test-ui
 
       - name: Upload Cucumber Report
         if: always()
