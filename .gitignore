@@ -13,6 +13,7 @@ yarn-error.log*
 
 # Test artifacts
 test-results/*
+cucumber-report
 reports/*
 *.zip
 *.mp4

@@ -1,4 +1,4 @@
-@get-api @api
+@get-api @api 
 Feature: API testing
 
   Scenario: API testing

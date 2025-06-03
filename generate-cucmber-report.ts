@@ -1,11 +1,25 @@
+import fs from 'fs';
+import path from 'path';
+
+
 const report = require("multiple-cucumber-html-reporter");
+
+const resultsDir = path.join(__dirname, '../test-results');
+
+// ✅ Clean the directory before generating
+if (fs.existsSync(resultsDir)) {
+  fs.rmSync(resultsDir, { recursive: true, force: true });
+}
+
+// 💡 Make sure test-results exists now — Cucumber will recreate it
+fs.mkdirSync(resultsDir, { recursive: true });
 
 report.generate({
   jsonDir: "test-results",
-  reportPath: "test-results/reports/",
+  reportPath: "cucumber-report",
   reportName: "Resume Builder Automation Report",
   pageTitle: "Resume Builder Automation Report",
-  displayDuration: true,
+  displayDuration: false,
   metadata: {
     browser: {
       name: "chrome",
