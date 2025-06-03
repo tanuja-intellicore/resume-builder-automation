@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test-ui": "ENV=test npx cucumber-js --tags \"@ui\"; npx ts-node generate-cucmber-report.ts",
-    "test-api": "ENV=test npx cucumber-js --tags \"@get-api\"; npx ts-node generate-cucmber-report.ts"
+    "test-ui": "ENV=test npx cucumber-js --import test/step-definitions/**/*.ts --tags \"@ui\"; npx ts-node generate-cucmber-report.ts",
+    "test-api": "ENV=test npx cucumber-js --import test/step-definitions/**/*.ts --tags \"@get-api\"; npx ts-node generate-cucmber-report.ts"
   },
   "keywords": [],
   "author": "",
