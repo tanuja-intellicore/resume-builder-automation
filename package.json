@@ -2,6 +2,7 @@
   "name": "resume-builder-automation",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test-ui": "ENV=test npx cucumber-js --tags \"@ui\"; npx ts-node generate-cucmber-report.ts",
     "test-api": "ENV=test npx cucumber-js --tags \"@get-api\"; npx ts-node generate-cucmber-report.ts"
