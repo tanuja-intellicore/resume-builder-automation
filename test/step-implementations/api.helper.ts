@@ -21,7 +21,6 @@ export async function postApi(endpoint: string, data: any): Promise<APIResponse>
 }
 
 export function expectStatus(response: APIResponse, expectedStatus: number): void {
- 
   try {
     expect(response.status()).toEqual(expectedStatus);
   } catch (error) {
