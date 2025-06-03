@@ -3,9 +3,13 @@ name: UI Tests
 on:
   push:
     branches: [main]
+    
+permissions:
+  contents: write
+  pages: write
 
 jobs:
-  ui:
+  UI:
     runs-on: ubuntu-latest
 
     steps:

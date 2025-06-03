@@ -9,7 +9,7 @@ permissions:
   pages: write
 
 jobs:
-  ui:
+  API:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,10 +26,10 @@ jobs:
       - name: Upload Report
         uses: actions/upload-artifact@v4
         with:
-          name: ui-report
+          name: api-report
           path: cucumber-report
 
-      - name: Deploy UI Report to GitHub Pages
+      - name: Deploy API Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
