@@ -4,7 +4,7 @@ import path from 'path';
 
 const report = require("multiple-cucumber-html-reporter");
 
-const resultsDir = path.join(__dirname, '../test-results');
+const resultsDir = path.join(__dirname, '../cucumber-report');
 
 // ✅ Clean the directory before generating
 if (fs.existsSync(resultsDir)) {
@@ -15,7 +15,7 @@ if (fs.existsSync(resultsDir)) {
 fs.mkdirSync(resultsDir, { recursive: true });
 
 report.generate({
-  jsonDir: "test-results",
+  jsonDir: "cucumber-report",
   reportPath: "cucumber-report",
   reportName: "Resume Builder Automation Report",
   pageTitle: "Resume Builder Automation Report",
